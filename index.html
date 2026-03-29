@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal SAP de Producción</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">EMPRESA DIECK Y DIECK</div>
+      <div class="subtitle">Portal operativo de producción, programación, cumplimiento y lotificación</div>
+    </div>
+    <div class="top-actions">
+      <button id="btnSave" class="btn dark">Guardar en GitHub</button>
+      <button id="btnLoad" class="btn">Cargar GitHub</button>
+      <button id="btnPrint" class="btn">Imprimir</button>
+      <button id="btnExcel" class="btn">Excel</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="card">
+        <h2>Configuración SAP</h2>
+        <div class="grid2">
+          <label>Vista
+            <select id="viewSel">
+              <option value="order">Orden diaria</option>
+              <option value="weekly">Programación semanal</option>
+              <option value="production">Producción diaria</option>
+              <option value="compliance">Cumplimiento</option>
+              <option value="lotification">Lotificación</option>
+              <option value="master">Maestro</option>
+            </select>
+          </label>
+          <label>Área
+            <select id="modeSel">
+              <option value="paqueteria">Paquetería</option>
+              <option value="molino_blanco">Molino blanco</option>
+              <option value="molino_escaldado">Molino escaldado</option>
+            </select>
+          </label>
+          <label>Fecha
+            <input id="dateSel" type="date" />
+          </label>
+          <label>Semana
+            <input id="weekSel" type="number" readonly />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>GitHub central</h2>
+        <div class="grid1">
+          <label>Owner <input id="ghOwner" type="text" placeholder="owner" /></label>
+          <label>Repo <input id="ghRepo" type="text" placeholder="repo" /></label>
+          <label>Branch <input id="ghBranch" type="text" value="main" /></label>
+          <label>Ruta JSON <input id="ghPath" type="text" value="data.json" /></label>
+          <label>Token <input id="ghToken" type="password" placeholder="ghp_..." /></label>
+        </div>
+        <div class="row">
+          <button id="btnApplyGitHub" class="btn">Aplicar</button>
+          <button id="btnSyncGitHub" class="btn dark">Sincronizar</button>
+        </div>
+        <div id="ghStatus" class="status">Sin conexión GitHub</div>
+      </section>
+
+      <section class="card">
+        <h2>Operadores por área</h2>
+        <div class="mini"><b>Paquetería:</b> Jeison Zuniga, Kenner Castellanos, Dennis Chavarria, Walter Sagastume</div>
+        <div class="mini"><b>Molinos:</b> Adelmo Suazo, Jorge Vilchez, Brandon Anduray</div>
+      </section>
+
+      <section class="card">
+        <h2>Base maestra</h2>
+        <div class="row">
+          <input id="masterFilter" type="text" placeholder="Filtrar por código o descripción" />
+          <button id="btnAddMaster" class="btn">Agregar</button>
+        </div>
+        <div class="scroll small-scroll"><table class="tbl" id="masterTable"><thead><tr><th>Código</th><th>Descripción</th><th>Peso</th><th>Unidad</th><th>Ent.</th><th>Mign.</th><th>Pul.</th><th>Área</th><th>Tar.</th><th>Bobina X</th><th>Bobina Y</th><th>Granza</th><th></th></tr></thead><tbody></tbody></table></div>
+      </section>
+
+      <section class="card">
+        <h2>Histórico</h2>
+        <input id="historyFilter" type="text" placeholder="Buscar registro" />
+        <div class="scroll hist" id="historyBox"></div>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <div id="sheet" class="sheet"></div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
