@@ -1,0 +1,97 @@
+window.DIECK_DATA = (() => {
+  const blank = () => ({codigo:'',descripcion:'',peso:'',unidad:'',familia:'',proceso:'',entero_min:'',mignon_max:'',pulido_min:'',area:'',tipo:'',tarima_div:'',bobina_x:'',bobina_y:'',granza_factor:'',lot_base:''});
+  const row = (o) => Object.assign(blank(), o);
+  const sections = () => ({ d1A:[blank(),blank(),blank(),blank()], d1B:[blank(),blank(),blank(),blank()], d2A:[blank(),blank(),blank(),blank()], d2B:[blank(),blank(),blank(),blank()] });
+  const master = [
+    row({codigo:'PT-100-003',descripcion:'ARROZ BAMBI ECONOMICO QQ (80/20) 100 LBS',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M1',entero_min:80,mignon_max:20,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-100-004',descripcion:'ARROZ MR. DIECK ESCALDADO QUINTAL 100 LBS',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M2',entero_min:95,mignon_max:5,pulido_min:22,area:'M2',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-100-005',descripcion:'ARROZ MANHATTAN ORO QUINTAL 100 LBS',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M2',entero_min:95,mignon_max:5,pulido_min:22,area:'M2',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-100-007',descripcion:'ARROZ MR. DIECK BLANCO QUINTAL 100 LBS',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M1',entero_min:95,mignon_max:5,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-100-008',descripcion:'ARROZ MANHATTAN BLANCO QUINTAL 100 LBS',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M1',entero_min:89,mignon_max:11,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-100-014',descripcion:'ARROZ BAMBINO ESCALDADO ECONOMICO QQ 88/12',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M2',entero_min:88,mignon_max:12,pulido_min:22,area:'M2',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-101-003',descripcion:'ARROZ BAMBI ECONOMICO SAQ (80/20) 25 LBS',peso:25,unidad:'SAQUITO',familia:'PT',proceso:'M1',entero_min:80,mignon_max:20,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-101-004',descripcion:'ARROZ MR. DIECK ESCALDADO SAQUITO 25 LBS',peso:25,unidad:'SAQUITO',familia:'PT',proceso:'M2',entero_min:95,mignon_max:5,pulido_min:22,area:'M2',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-101-005',descripcion:'ARROZ MANHATTAN ORO SAQUITO 25 LBS',peso:25,unidad:'SAQUITO',familia:'PT',proceso:'M2',entero_min:95,mignon_max:5,pulido_min:22,area:'M2',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-101-006',descripcion:'ARROZ MR. DIECK BLANCO SAQUITO 25 LBS',peso:25,unidad:'SAQUITO',familia:'PT',proceso:'M1',entero_min:95,mignon_max:5,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-101-008',descripcion:'ARROZ MANHATTAN BLANCO SAQUITO 25 LBS',peso:25,unidad:'SAQUITO',familia:'PT',proceso:'M1',entero_min:89,mignon_max:11,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-111-005',descripcion:'ARROZ BAMBI SUPER ECONOMICO QQ (70/30) 100 LBS',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M1',entero_min:70,mignon_max:30,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-111-006',descripcion:'ARROZ ESCALDADO #1 100 LBS (A)',peso:100,unidad:'QUINTAL',familia:'PT',proceso:'M2',entero_min:94,mignon_max:6,pulido_min:22,area:'M2',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-111-008',descripcion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',peso:25,unidad:'SAQUITO',familia:'PT',proceso:'M1',entero_min:70,mignon_max:30,pulido_min:37,area:'M1',tipo:'PT',tarima_div:100,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:1225}),
+    row({codigo:'PT-102-001',descripcion:'ARROZ MANHATTAN ORO 4 LBS (10)',peso:40,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:22,area:'PAQUETERIA',tipo:'PT',tarima_div:150,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-102-003',descripcion:'ARROZ MANHATTAN BLANCO 4 LBS (10)',peso:40,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:150,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-103-001',descripcion:'ARROZ MR. DIECK ESCALDADO 1.75 KGS (10)',peso:38.5,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:22,area:'PAQUETERIA',tipo:'PT',tarima_div:125,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-103-003',descripcion:'ARROZ MR. DIECK BLANCO 1.75 KGS (10)',peso:38.5,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:125,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-104-010',descripcion:'ARROZ MANHATTAN ORO 1.5 KGS (10)',peso:33,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:22,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-104-011',descripcion:'ARROZ MANHATTAN BLANCO 1.5 KGS (10)',peso:33,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-106-001',descripcion:'ARROZ MR. DIECK BLANCO 1 LBS (25)',peso:25,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-106-002',descripcion:'ARROZ MANHATTAN ORO 1 LBS (25)',peso:25,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:22,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-106-004',descripcion:'ARROZ MANHATTAN BLANCO 1 LBS (20)',peso:25,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:89,mignon_max:11,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-107-001',descripcion:'ARROZ MR. DIECK ESCALDADO 350 GRS (25)',peso:19.2,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:22,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-107-002',descripcion:'ARROZ MR. DIECK BLANCO 350 GRS (25)',peso:19.2,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:95,mignon_max:5,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:80,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'PT-109-002',descripcion:'ARROZ MR. DIECK BLANCO 175 GRS (50)',peso:19.2,unidad:'FARDO',familia:'PT',proceso:'PAQUETERIA',entero_min:89,mignon_max:11,pulido_min:37,area:'PAQUETERIA',tipo:'PT',tarima_div:75,bobina_x:5,bobina_y:25,granza_factor:1.25,lot_base:3000}),
+    row({codigo:'SP-100-002',descripcion:'SEMOLINA BLANCA',peso:'-',unidad:'-',familia:'SP',proceso:'M1',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M1',tipo:'SP',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'SP-100-010',descripcion:'SEMOLINA ESCALDADA',peso:'-',unidad:'-',familia:'SP',proceso:'M2',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M2',tipo:'SP',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'SUB-MM-001',descripcion:'MIGA MEMBRETADA',peso:'-',unidad:'-',familia:'SUB',proceso:'M1',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M1',tipo:'SUB',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'SUB-MB-001',descripcion:'MIGON BLANCO',peso:'-',unidad:'-',familia:'SUB',proceso:'M1',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M1',tipo:'SUB',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'SUB-ME-001',descripcion:'MIGON ESCALDADO',peso:'-',unidad:'-',familia:'SUB',proceso:'M2',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M2',tipo:'SUB',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'SUB-SE-001',descripcion:'SALVADO ESCALDADO',peso:'-',unidad:'-',familia:'SUB',proceso:'M2',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M2',tipo:'SUB',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'SUB-SB-001',descripcion:'SALVADO BLANCO',peso:'-',unidad:'-',familia:'SUB',proceso:'M1',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'M1',tipo:'SUB',tarima_div:500,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:500}),
+    row({codigo:'PT-110-001',descripcion:'RECHAZO ARROZ ESCALDADO',peso:'-',unidad:'-',familia:'PT',proceso:'SORTEX B',entero_min:'-',mignon_max:'-',pulido_min:'-',area:'SORTEX B',tipo:'PT',tarima_div:200,bobina_x:'',bobina_y:'',granza_factor:1.25,lot_base:200})
+  ];
+  const orders = {
+    'ODP|paqueteria|2026-03-29': { key:'ODP|paqueteria|2026-03-29', mode:'paqueteria', date:'2026-03-29', week:13, observation:'', sections:{
+      d1A:[row({codigo:'PT-103-003',descripcion:'ARROZ MR. DIECK BLANCO 1.75 KGS (10)',linea:'4',cantidad:890,producto:'',envas:2}), row({codigo:'PT-104-011',descripcion:'ARROZ MANHATTAN BLANCO 1.5 KGS (10)',linea:'4',cantidad:648,envas:2}), row({codigo:'PT-106-004',descripcion:'ARROZ MANHATTAN BLANCO 1 LBS (20)',linea:'2',cantidad:861,envas:2}), row({codigo:'PT-107-002',descripcion:'ARROZ MR. DIECK BLANCO 350 GRS (25)',linea:'4',cantidad:143,envas:2})],
+      d1B:[row({codigo:'PT-106-004',descripcion:'ARROZ MANHATTAN BLANCO 1 LBS (20)',linea:'4',cantidad:906,envas:2}), row({codigo:'PT-102-001',descripcion:'ARROZ MANHATTAN ORO 4 LBS (10)',linea:'4',cantidad:258,envas:2}), row({codigo:'PT-103-001',descripcion:'ARROZ MR. DIECK ESCALDADO 1.75 KGS (10)',linea:'4',cantidad:38,envas:2}), blank()],
+      d2A:[row({codigo:'PT-104-011',descripcion:'ARROZ MANHATTAN BLANCO 1.5 KGS (10)',linea:'4',cantidad:711,envas:2}), row({codigo:'PT-103-003',descripcion:'ARROZ MR. DIECK BLANCO 1.75 KGS (10)',linea:'4',cantidad:648,envas:2}), blank(), blank()],
+      d2B:[row({codigo:'PT-107-002',descripcion:'ARROZ MR. DIECK BLANCO 350 GRS (25)',linea:'4',cantidad:872,envas:2}), row({codigo:'PT-107-002',descripcion:'ARROZ MR. DIECK BLANCO 350 GRS (25)',linea:'4',cantidad:483,envas:2}), row({codigo:'PT-106-001',descripcion:'ARROZ MR. DIECK BLANCO 1 LBS (25)',linea:'4',cantidad:640,envas:2}), blank()]
+    }},
+    'ODP|molino_blanco|2026-03-29': { key:'ODP|molino_blanco|2026-03-29', mode:'molino_blanco', date:'2026-03-29', week:13, observation:'', sections:{
+      d1A:[row({codigo:'PT-101-006',descripcion:'ARROZ MR. DIECK BLANCO SAQUITO 25 LBS',cantidad:700}), row({codigo:'PT-111-008',descripcion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',cantidad:1000}), row({codigo:'PT-100-008',descripcion:'ARROZ MANHATTAN BLANCO QUINTAL 100 LBS',cantidad:120}), blank()],
+      d1B:[row({codigo:'PT-101-006',descripcion:'ARROZ MR. DIECK BLANCO SAQUITO 25 LBS',cantidad:600}), row({codigo:'PT-111-008',descripcion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',cantidad:600}), row({codigo:'PT-100-003',descripcion:'ARROZ BAMBI ECONOMICO QQ (80/20) 100 LBS',cantidad:240}), blank()],
+      d2A:[row({codigo:'PT-100-007',descripcion:'ARROZ MR. DIECK BLANCO QUINTAL 100 LBS',cantidad:600}), row({codigo:'PT-111-005',descripcion:'ARROZ BAMBI SUPER ECONOMICO QQ (70/30) 100 LBS',cantidad:320}), blank(), blank()],
+      d2B:[row({codigo:'SP-100-002',descripcion:'SEMOLINA BLANCA',cantidad:500}), row({codigo:'SUB-MM-001',descripcion:'MIGA MEMBRETADA',cantidad:500}), blank(), blank()]
+    }},
+    'ODP|molino_escaldado|2026-03-29': { key:'ODP|molino_escaldado|2026-03-29', mode:'molino_escaldado', date:'2026-03-29', week:13, observation:'', sections:{
+      d1A:[row({codigo:'PT-100-004',descripcion:'ARROZ MR. DIECK ESCALDADO QUINTAL 100 LBS',cantidad:280}), row({codigo:'PT-101-005',descripcion:'ARROZ MANHATTAN ORO SAQUITO 25 LBS',cantidad:500}), blank()],
+      d1B:[row({codigo:'PT-100-004',descripcion:'ARROZ MR. DIECK ESCALDADO QUINTAL 100 LBS',cantidad:360}), row({codigo:'PT-100-005',descripcion:'ARROZ MANHATTAN ORO QUINTAL 100 LBS',cantidad:280}), row({codigo:'PT-101-004',descripcion:'ARROZ MR. DIECK ESCALDADO SAQUITO 25 LBS',cantidad:150}), blank()],
+      d2A:[row({codigo:'PT-100-014',descripcion:'ARROZ BAMBINO ESCALDADO ECONOMICO QQ 88/12',cantidad:40}), row({codigo:'PT-101-005',descripcion:'ARROZ MANHATTAN ORO SAQUITO 25 LBS',cantidad:450}), blank()],
+      d2B:[row({codigo:'SP-100-010',descripcion:'SEMOLINA ESCALDADA',cantidad:500}), row({codigo:'SUB-ME-001',descripcion:'MIGON ESCALDADO',cantidad:500}), blank()]
+    }}
+  };
+  const plans = [
+    { key:'PRG-SEM|2026|W13', year:2026, week:13, observation:'', rows:[
+      {fecha:'2026-03-23',week:13,codigo:'PT-103-003',descripcion:'ARROZ MR. DIECK BLANCO 1.75 KGS (10)',area:'PAQUETERIA',programado:1000,cantidad_me:206,tipo:'BOBINA IMPRESA'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-104-011',descripcion:'ARROZ MANHATTAN BLANCO 1.5 KGS (10)',area:'PAQUETERIA',programado:700,cantidad_me:132,tipo:'BOBINA IMPRESA'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-102-003',descripcion:'ARROZ MANHATTAN BLANCO 4 LBS (10)',area:'PAQUETERIA',programado:360,cantidad_me:76,tipo:'BOBINA IMPRESA'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-106-004',descripcion:'ARROZ MANHATTAN BLANCO 1 LBS (20)',area:'PAQUETERIA',programado:2000,cantidad_me:336,tipo:'BOBINA IMPRESA'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-107-002',descripcion:'ARROZ MR. DIECK BLANCO 350 GRS (25)',area:'PAQUETERIA',programado:8000,cantidad_me:1391,tipo:'BOBINA IMPRESA'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-100-003',descripcion:'ARROZ BAMBI ECONOMICO QQ (80/20) 100 LBS',area:'M1',programado:520,cantidad_me:520,tipo:'SACO QQ 100 LBS'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-100-005',descripcion:'ARROZ MANHATTAN ORO QUINTAL 100 LBS',area:'M2',programado:700,cantidad_me:700,tipo:'SACO QQ 100 LBS'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-101-005',descripcion:'ARROZ MANHATTAN ORO SAQUITO 25 LBS',area:'M2',programado:1000,cantidad_me:1000,tipo:'SAQUITO 25 LBS'},
+      {fecha:'2026-03-23',week:13,codigo:'PT-111-008',descripcion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',area:'M1',programado:1500,cantidad_me:1500,tipo:'SAQUITO 25 LBS'},
+      {fecha:'2026-03-23',week:13,codigo:'SP-100-002',descripcion:'SEMOLINA BLANCA',area:'M1',programado:500,cantidad_me:500,tipo:'SACO QQ 100 LBS'}
+    ]}
+  ];
+  const production = [
+    {fecha:'2026-03-23',anio:2026,mes:'MAR',sem:13,dia:'LUNES',material:'PT-111-005',presentacion:'ARROZ BAMBI SUPER ECONOMICO QQ (70/30) 100 LBS',area:'M1',total:240,turno:'A',observacion:''},
+    {fecha:'2026-03-23',anio:2026,mes:'MAR',sem:13,dia:'LUNES',material:'PT-100-005',presentacion:'ARROZ MANHATTAN ORO QUINTAL 100 LBS',area:'M2',total:100,turno:'A',observacion:''},
+    {fecha:'2026-03-23',anio:2026,mes:'MAR',sem:13,dia:'LUNES',material:'PT-101-005',presentacion:'ARROZ MANHATTAN ORO SAQUITO 25 LBS',area:'M2',total:180,turno:'A',observacion:''},
+    {fecha:'2026-03-23',anio:2026,mes:'MAR',sem:13,dia:'LUNES',material:'PT-101-006',presentacion:'ARROZ MR. DIECK BLANCO SAQUITO 25 LBS',area:'M1',total:521,turno:'A',observacion:''},
+    {fecha:'2026-03-23',anio:2026,mes:'MAR',sem:13,dia:'LUNES',material:'PTE-106-004',presentacion:'ARROZ MANHATTAN BLANCO 1 LBS (25)',area:'PAQUETERIA',total:142,turno:'A',observacion:''},
+    {fecha:'2026-03-23',anio:2026,mes:'MAR',sem:13,dia:'LUNES',material:'PT-106-004',presentacion:'ARROZ MANHATTAN BLANCO 1 LBS (20)',area:'PAQUETERIA',total:861,turno:'A',observacion:''},
+    {fecha:'2026-03-24',anio:2026,mes:'MAR',sem:13,dia:'MARTES',material:'PT-100-007',presentacion:'ARROZ MR. DIECK BLANCO QUINTAL 100 LBS',area:'M1',total:80,turno:'A',observacion:''},
+    {fecha:'2026-03-24',anio:2026,mes:'MAR',sem:13,dia:'MARTES',material:'PT-111-008',presentacion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',area:'M1',total:150,turno:'A',observacion:''},
+    {fecha:'2026-03-24',anio:2026,mes:'MAR',sem:13,dia:'MARTES',material:'PT-103-001',presentacion:'ARROZ MR. DIECK ESCALDADO 1.75 KGS (10)',area:'PAQUETERIA',total:164,turno:'A',observacion:''},
+    {fecha:'2026-03-24',anio:2026,mes:'MAR',sem:13,dia:'MARTES',material:'PT-106-004',presentacion:'ARROZ MANHATTAN BLANCO 1 LBS (20)',area:'PAQUETERIA',total:1361,turno:'A',observacion:''},
+    {fecha:'2026-03-25',anio:2026,mes:'MAR',sem:13,dia:'MIÉRCOLES',material:'PT-100-004',presentacion:'ARROZ MR. DIECK ESCALDADO QUINTAL 100 LBS',area:'M2',total:360,turno:'A',observacion:''},
+    {fecha:'2026-03-25',anio:2026,mes:'MAR',sem:13,dia:'MIÉRCOLES',material:'PT-111-008',presentacion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',area:'M1',total:1000,turno:'A',observacion:''},
+    {fecha:'2026-03-25',anio:2026,mes:'MAR',sem:13,dia:'MIÉRCOLES',material:'PT-101-006',presentacion:'ARROZ MR. DIECK BLANCO SAQUITO 25 LBS',area:'M1',total:500,turno:'A',observacion:''},
+    {fecha:'2026-03-25',anio:2026,mes:'MAR',sem:13,dia:'MIÉRCOLES',material:'PT-103-003',presentacion:'ARROZ MR. DIECK BLANCO 1.75 KGS (10)',area:'PAQUETERIA',total:890,turno:'A',observacion:''},
+    {fecha:'2026-03-25',anio:2026,mes:'MAR',sem:13,dia:'MIÉRCOLES',material:'PT-104-011',presentacion:'ARROZ MANHATTAN BLANCO 1.5 KGS (10)',area:'PAQUETERIA',total:403,turno:'A',observacion:''},
+    {fecha:'2026-03-26',anio:2026,mes:'MAR',sem:13,dia:'JUEVES',material:'PT-100-005',presentacion:'ARROZ MANHATTAN ORO QUINTAL 100 LBS',area:'M2',total:168,turno:'A',observacion:''},
+    {fecha:'2026-03-26',anio:2026,mes:'MAR',sem:13,dia:'JUEVES',material:'PT-100-014',presentacion:'ARROZ BAMBINO ESCALDADO ECONOMICO QQ 88/12',area:'M2',total:40,turno:'A',observacion:''},
+    {fecha:'2026-03-26',anio:2026,mes:'MAR',sem:13,dia:'JUEVES',material:'PT-101-003',presentacion:'ARROZ BAMBI ECONOMICO SAQ (80/20) 25 LBS',area:'M1',total:55,turno:'A',observacion:''},
+    {fecha:'2026-03-26',anio:2026,mes:'MAR',sem:13,dia:'JUEVES',material:'PT-111-008',presentacion:'ARROZ BAMBI SUPER ECONOMICO SAQ (70/30) 25 LBS',area:'M1',total:389,turno:'A',observacion:''}
+  ];
+  return { ui:{view:'order',mode:'paqueteria',date:'2026-03-29',week:13,historyQuery:'',signature:'Supervisor de Producción',lastUpdate:'',github:{owner:'',repo:'',branch:'main',path:'data.json',token:''}}, github:{owner:'',repo:'',branch:'main',path:'data.json',token:''}, master, orders, plans, production, responsables:{paqueteria:['Jeison Zuniga','Kenner Castellanos','Dennis Chavarria','Walter Sagastume'], molino_blanco:['Adelmo Suazo','Jorge Vilchez','Brandon Anduray'], molino_escaldado:['Adelmo Suazo','Jorge Vilchez','Brandon Anduray']} };
+})();
