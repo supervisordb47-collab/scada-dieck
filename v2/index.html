@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Portal SAP Planta</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="topbar">
+<div><b>EMPRESA DIECK Y DIECK</b><div class="subtitle">Sistema SAP de Planta</div></div>
+<div><button id="btnPrint" class="btn">Imprimir</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+<select id="viewSel">
+<option value="order">Orden</option>
+<option value="weekly">Programación</option>
+<option value="production">Producción</option>
+<option value="compliance">Cumplimiento</option>
+<option value="lotification">Lotes</option>
+<option value="master">Maestro</option>
+</select>
+<select id="modeSel">
+<option value="paqueteria">PAQ</option>
+<option value="molino_blanco">M1</option>
+<option value="molino_escaldado">M2</option>
+</select>
+<input id="dateSel" type="date"/>
+</aside>
+<main id="sheet" class="sheet"></main>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
