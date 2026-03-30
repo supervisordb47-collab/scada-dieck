@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal SAP Producción Arroz - Mejorado</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="brand">EMPRESA DIECK Y DIECK</div>
+      <div class="subtitle">Captura por fecha y bloques separados: Paquetería, Molino 1 y Molino 2</div>
+    </div>
+    <div class="top-actions">
+      <button id="btnPrint" class="btn dark" type="button">Imprimir</button>
+      <button id="btnExport" class="btn" type="button">Exportar JSON</button>
+      <button id="btnSave" class="btn" type="button">Guardar GitHub</button>
+      <button id="btnLoad" class="btn" type="button">Cargar GitHub</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <section class="card">
+        <h2>Vista SAP</h2>
+        <div class="grid2">
+          <label>Fecha
+            <input id="dateSel" type="date" />
+          </label>
+          <label>Semana
+            <input id="weekSel" type="number" readonly />
+          </label>
+          <label>Vista
+            <select id="viewSel">
+              <option value="order">Orden diaria</option>
+              <option value="weekly">Programación semanal</option>
+              <option value="production">Producción diaria</option>
+              <option value="compliance">Cumplimiento</option>
+              <option value="lotification">Lotificación</option>
+              <option value="master">Maestro</option>
+              <option value="history">Histórico</option>
+            </select>
+          </label>
+          <label>Área
+            <select id="modeSel">
+              <option value="paqueteria">Paquetería</option>
+              <option value="molino_blanco">Molino 1</option>
+              <option value="molino_escaldado">Molino 2</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <button id="btnSetDate" class="btn dark" type="button">Abrir fecha</button>
+          <button id="btnAddBlockRow" class="btn" type="button">Agregar fila al bloque</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>GitHub central</h2>
+        <div class="grid1">
+          <label>Owner <input id="ghOwner" type="text" /></label>
+          <label>Repo <input id="ghRepo" type="text" /></label>
+          <label>Branch <input id="ghBranch" type="text" value="main" /></label>
+          <label>Ruta JSON <input id="ghPath" type="text" value="data.json" /></label>
+          <label>Token <input id="ghToken" type="password" placeholder="ghp_..." /></label>
+        </div>
+        <div class="row">
+          <button id="btnApplyGitHub" class="btn" type="button">Aplicar</button>
+          <button id="btnSyncGitHub" class="btn dark" type="button">Sincronizar</button>
+        </div>
+        <div id="ghStatus" class="status">Sin conexión GitHub</div>
+      </section>
+
+      <section class="card">
+        <h2>Operadores</h2>
+        <div class="mini"><b>Paquetería:</b> Jeison Zuniga, Kenner Castellanos, Dennis Chavarria, Walter Sagastume</div>
+        <div class="mini"><b>Molino 1:</b> Adelmo Suazo, Jorge Vilchez, Brandon Anduray</div>
+        <div class="mini"><b>Molino 2:</b> Adelmo Suazo, Jorge Vilchez, Brandon Anduray</div>
+      </section>
+
+      <section class="card">
+        <h2>Base maestra</h2>
+        <div class="row">
+          <input id="masterFilter" type="text" placeholder="Filtrar por código o descripción" />
+          <button id="btnAddMaster" class="btn" type="button">Agregar</button>
+        </div>
+        <div class="scroll small-scroll">
+          <table class="tbl" id="masterTable">
+            <thead>
+              <tr>
+                <th>Código</th><th>Descripción</th><th>Peso</th><th>Unidad</th><th>Área</th><th>Ent.</th><th>Mign.</th><th>Pul.</th><th>Tar.</th><th>BX</th><th>BY</th><th>Pref.</th><th>Lote</th><th></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Histórico</h2>
+        <input id="historyFilter" type="text" placeholder="Buscar" />
+        <div class="scroll hist" id="historyBox"></div>
+      </section>
+    </aside>
+
+    <section class="workspace">
+      <div id="sheet" class="sheet"></div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
